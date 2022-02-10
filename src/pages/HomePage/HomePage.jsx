@@ -3,8 +3,7 @@ import * as itemsAPI from '../../utilities/items-api';
 import ClothingList from '../../components/ClothingList/ClothingList';
 import './HomePage'
 
-export default function HomePage({ user, setUser }) {
-  const [clothingItems, setClothingItems] = useState([]);
+export default function HomePage({ user, setUser, setClothingItems, clothingItems }) {
   const categoriesRef = useRef([]);
 
   useEffect(() => {
