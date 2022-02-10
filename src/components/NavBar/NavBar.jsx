@@ -13,7 +13,7 @@ function NavBar({ user, setUser }) {
       <h1>Look Good Do Good</h1>
       <Link to="/orders">Shop</Link>
       &nbsp; | &nbsp;
-      <Link to="/orders/new">Checkout</Link>
+      <Link to="/checkout">Checkout</Link>
       &nbsp; | &nbsp;
       <Link to="/orders/favorites">Favorites</Link>
       &nbsp; | &nbsp;
