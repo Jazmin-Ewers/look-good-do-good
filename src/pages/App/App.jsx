@@ -22,7 +22,7 @@ function App() {
         <NavBar setUser={setUser} user={user}/>
           <Routes>
             <Route path="/" element={<HomePage clothingItems={clothingItems} setClothingItems={setClothingItems} />} />
-            <Route path="/orders/new" element={<NewOrderPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/clothings/:clothingsItemParam"element={<ClothingDetailPage clothingItem={clothingItem} setClothingItem={setClothingItem}/>} />
             <Route path="/*" element={<Navigate to="/" />} />

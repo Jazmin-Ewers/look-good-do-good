@@ -19,7 +19,7 @@ export default function ClothingDetailPage({setClothingItem, clothingItem}) {
       return (
     <main className="ClothingDetailPage">
     <Card style={{ width: '18rem' }}>
-      {/* <Card.Img variant="top" src={clothingItem.detailimageurl} /> */}
+      <Card.Img variant="top" src={clothingItem.detailimageurl} />
         <Card.Body>
             <Card.Text>Detail Page{clothingItem.name}</Card.Text>
         </Card.Body>
