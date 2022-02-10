@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
+import * as ordersAPI from '../../utilities/orders-api';
 import ClothingList from '../../components/ClothingList/ClothingList';
 import './HomePage'
 
 export default function HomePage({ user, setUser, setClothingItems, clothingItems }) {
   const categoriesRef = useRef([]);
+  const [cart, setCart] = useState(null);
 
   useEffect(() => {
     async function getItems(){
@@ -16,6 +18,12 @@ export default function HomePage({ user, setUser, setClothingItems, clothingItem
       setClothingItems(itemsFromDB);
     }
     getItems();
+
+    async function getCart(){
+      const cartFromDB = await ordersAPI.getCart();
+      setCart(cartFromDB);
+    }
+    getCart();
   }, []);
 
   return (
