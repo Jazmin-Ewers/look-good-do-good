@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
+import { BsHandbag, BsHeart } from 'react-icons/bs';
+
 
 function NavBar({ user, setUser }) {
 
@@ -10,12 +12,12 @@ function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <h1>Look Good Do Good</h1>
-      <Link to="/orders">Shop</Link>
+      <Link to="/"><h1>Look Good Do Good</h1></Link>
+      <Link to="/orders">Orders</Link>
       &nbsp; | &nbsp;
-      <Link to="/checkout">Checkout</Link>
+      <Link to="/cart"><BsHandbag/></Link>
       &nbsp; | &nbsp;
-      <Link to="/orders/favorites">Favorites</Link>
+      <Link to="/orders/favorites"><BsHeart/></Link>
       &nbsp; | &nbsp;
       <span>Hi, {user.name}!</span>
       &nbsp; | &nbsp;
