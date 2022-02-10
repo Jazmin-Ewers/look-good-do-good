@@ -12,6 +12,7 @@ import ClothingDetailPage from '../ClothingDetailPage/ClothingDetailPage';
 function App() {
   const [user, setUser] = useState(getUser());
   const [clothingItems, setClothingItems] = useState([]);
+  const [clothingItem, setClothingItem] = useState([]);
 
   return (
     <main className="App">
@@ -23,7 +24,7 @@ function App() {
             <Route path="/" element={<HomePage clothingItems={clothingItems} setClothingItems={setClothingItems} />} />
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
-            <Route path="/clothings/:clothingsItem"element={<ClothingDetailPage clothingItems={clothingItems} setClothingItems={setClothingItems}/>} />
+            <Route path="/clothings/:clothingsItemParam"element={<ClothingDetailPage clothingItem={clothingItem} setClothingItem={setClothingItem}/>} />
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
         </>
