@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import ClothingList from '../../components/ClothingList/ClothingList';
+import './HomePage'
 
 export default function HomePage({ user, setUser }) {
   const [clothingItems, setClothingItems] = useState([]);
@@ -20,8 +21,6 @@ export default function HomePage({ user, setUser }) {
 
   return (
     <main className="HomePage">
-      <h1>Index Page</h1>
-      <button onClick={() => setClothingItems(Date.now())}>Trigger Re-render</button>
       <ClothingList clothingItems={clothingItems}/>
     </main>
   );
