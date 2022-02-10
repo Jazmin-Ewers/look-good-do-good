@@ -10,6 +10,11 @@ const lineItemSchema = new Schema({
   toJSON: { virtuals: true }
 });
 
+// Calculate the Total Price of each line item
+lineItemSchema.virtual('exitPrice').get(function() {
+    return this.qty * this.item.price;
+}); 
+
 const orderSchema = new Schema({
   user: {type: Schema.Types.ObjectId, ref: 'User'},
   lineItems: [lineItemSchema],
@@ -19,10 +24,17 @@ const orderSchema = new Schema({
   toJSON: { virtuals: true }
 });
 
-// Calculate the Total Price of each line item
-lineItemSchema.virtual('extPrice').get(function() {
-    return this.qty * this.item.price;
-}); 
+orderSchema.virtual('orderTotal').get(function () {
+    return this.lineItems.reduce((total, item) => total + item.exitPrice, 0);
+})
+
+orderSchema.virtual('totalQty').get(function() {
+    reutrn this.lineItems.reduce((total, item) => total + item.qty, 0);
+})
+
+orderSchema.virtual('orderId').get(function() {
+  return this.id.slice(-6).toUpperCase();
+});
 
 
 module.exports = mongoose.model('Order', orderSchema);
