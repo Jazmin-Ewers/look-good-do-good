@@ -36,5 +36,17 @@ orderSchema.virtual('orderId').get(function() {
   return this.id.slice(-6).toUpperCase();
 });
 
+orderSchema.statics.getCart = function (userId) {
+  // Either return a brand new cart or the user's updated cart
+  return this.findOneAndUpdate(
+    // 1st Parameter (Query): Find User Order that isn't paid
+    {user: userId, isPaid: false},
+    // 2nd Parameter (If you find on then Update): Create a new Order that has a User property with a default of is:false
+    { user: userId },
+    // Third Parameter (Overrides findOneAndUpdate return default -> to return the updated Data)
+    { upsert: true, new: true}
+    {}
+  )
+}
 
 module.exports = mongoose.model('Order', orderSchema);

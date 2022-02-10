@@ -9,10 +9,10 @@ module.exports = {
   getOrders
 };
 
+// Get all the User's Orders 
 async function getOrders(req, res){
   const orders = await Order
   .find({ user: req.user._id, isPaid: true})
-  // .sort({field : timestamps});
   console.log("Finding orders:", orders[0].lineItems[0]);
   res.json(orders);
 }
