@@ -13,6 +13,7 @@ function App() {
   const [user, setUser] = useState(getUser());
   const [clothingItems, setClothingItems] = useState([]);
   const [clothingItem, setClothingItem] = useState([]);
+  const [cart, setCart] = useState(null);
 
   return (
     <main className="App">
@@ -21,8 +22,8 @@ function App() {
         <>
         <NavBar setUser={setUser} user={user}/>
           <Routes>
-            <Route path="/" element={<HomePage clothingItems={clothingItems} setClothingItems={setClothingItems} />} />
-            <Route path="/cart" element={<CartPage />} />
+            <Route path="/" element={<HomePage clothingItems={clothingItems} setClothingItems={setClothingItems} cart={cart} setCart={setCart} />} />
+            <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/clothings/:clothingsItemParam"element={<ClothingDetailPage clothingItem={clothingItem} setClothingItem={setClothingItem}/>} />
             <Route path="/*" element={<Navigate to="/" />} />

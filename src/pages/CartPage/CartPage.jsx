@@ -1,6 +1,8 @@
-function CartPage() {
+function CartPage({ cart, setCart }) {
   return (
-    <h1>CartPage</h1>
+    <main className="CartPage">
+      <h1>Cart Page</h1>
+    </main>
   )
 }
 

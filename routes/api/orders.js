@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const ordersCtrl = require('../../orders/api/items');
+const ordersCtrl = require('../../controllers/api/orders');
 
-// GET /api/orders
-router.get('/', ordersCtrl.index);
-// GET /api/orders/:id
-router.get('/:id', ordersCtrl.show);
+// GET /api/orders/cart
+router.get('/cart', ordersCtrl.cart);
+
 
 module.exports = router;

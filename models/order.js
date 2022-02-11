@@ -29,7 +29,7 @@ orderSchema.virtual('orderTotal').get(function () {
 })
 
 orderSchema.virtual('totalQty').get(function() {
-    reutrn this.lineItems.reduce((total, item) => total + item.qty, 0);
+    return this.lineItems.reduce((total, item) => total + item.qty, 0);
 })
 
 orderSchema.virtual('orderId').get(function() {
@@ -45,8 +45,7 @@ orderSchema.statics.getCart = function (userId) {
     { user: userId },
     // Third Parameter (Overrides findOneAndUpdate return default -> to return the updated Data)
     { upsert: true, new: true}
-    {}
-  )
-}
+  );
+};
 
 module.exports = mongoose.model('Order', orderSchema);
