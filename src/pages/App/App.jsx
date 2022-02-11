@@ -8,12 +8,18 @@ import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
 import ClothingDetailPage from '../ClothingDetailPage/ClothingDetailPage';
+import * as ordersAPI from '../../utilities/orders-api';
 
 function App() {
   const [user, setUser] = useState(getUser());
   const [clothingItems, setClothingItems] = useState([]);
   const [clothingItem, setClothingItem] = useState([]);
   const [cart, setCart] = useState(null);
+
+  async function handleAddToOrder(itemId) {
+    const cart = await ordersAPI.addItemToCart(itemId);
+    setCart(cart);
+  }
 
   return (
     <main className="App">
@@ -25,7 +31,7 @@ function App() {
             <Route path="/" element={<HomePage clothingItems={clothingItems} setClothingItems={setClothingItems} cart={cart} setCart={setCart} />} />
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
-            <Route path="/clothings/:clothingsItemParam"element={<ClothingDetailPage clothingItem={clothingItem} setClothingItem={setClothingItem}/>} />
+            <Route path="/clothings/:clothingsItemParam"element={<ClothingDetailPage clothingItem={clothingItem} setClothingItem={setClothingItem} handleAddToOrder={handleAddToOrder}/>} />
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
         </>

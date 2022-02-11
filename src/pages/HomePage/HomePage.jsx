@@ -4,7 +4,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 import ClothingList from '../../components/ClothingList/ClothingList';
 import './HomePage'
 
-export default function HomePage({ user, setUser, setClothingItems, clothingItems, cart, setCart }) {
+export default function HomePage({ user, setUser, setClothingItems, clothingItems, cart, setCart, handleAddToOrder }) {
   const categoriesRef = useRef([]);
 
   useEffect(() => {
