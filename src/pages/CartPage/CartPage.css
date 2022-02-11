@@ -7,6 +7,7 @@
     padding: 0;
     font-family: 'Helvetica';
   }
+
   .main-container {
     width: 100%;
     height: 100%;
@@ -14,7 +15,6 @@
     margin: 0;
     justify-content: center;
     align-items: center;
-    background-color: #fafafa;
   }
   
   .table-container {
@@ -23,11 +23,11 @@
     background-color: white;
     width: 80%;
     margin: 0 auto;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     border: 1px solid black;
     border-right:1px solid transparent;
     border-left:1px solid transparent;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, .08);
+    /* box-shadow: 0px 1px 4px rgba(0, 0, 0, .08); */
   }
   
   .table-row {
