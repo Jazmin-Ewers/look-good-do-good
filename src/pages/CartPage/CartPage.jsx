@@ -11,8 +11,7 @@ export default function CartPage({ cart, setCart }) {
     getCart();
     }, []);
 
-
-     if (!cart) return null;
+    if (!cart) return null;
     const lineItems = cart.lineItems.map(item =>
     <LineItem
       lineItem={item}
@@ -23,7 +22,25 @@ export default function CartPage({ cart, setCart }) {
 
   return (
     <main className="CartPage">
-      <LineItem/>
+    <table>
+    <thead>
+    <tr>
+      <th>Product</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Total Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    {cart.lineItems.map(item =>
+    <LineItem
+      lineItem={item}
+      isPaid={cart.isPaid}
+      key={item._id}
+    />
+    )}
+    </tbody>
+    </table>
     </main>
   )
 }

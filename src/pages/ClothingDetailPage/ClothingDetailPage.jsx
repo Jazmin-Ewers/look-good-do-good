@@ -7,12 +7,10 @@ import { useState, useEffect, useRef } from 'react';
 export default function ClothingDetailPage({setClothingItem, clothingItem, handleAddToOrder}) {
 
     let { clothingsItemParam } = useParams();
-    console.log(clothingsItemParam)
 
     useEffect(() => {
     async function getItems(){
       const itemFromDB = await itemsAPI.getById(clothingsItemParam);
-      console.log(itemFromDB.name)
       setClothingItem(itemFromDB);
     }
     getItems();
