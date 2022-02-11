@@ -25,6 +25,7 @@ export default function CartPage({ cart, setCart, handleCheckout }) {
 
   return (
     <main className="CartPage">
+    {cart.isPaid ?
     <div className="main-container">
     <div>SHOPPING BAG ORDER SUMMARY</div>
       <div className="table-container">
@@ -51,7 +52,7 @@ export default function CartPage({ cart, setCart, handleCheckout }) {
             <Button variant="dark" onClick={() => handleCheckout()} disabled={!lineItems.length}>CHECKOUT</Button>
         </Card.Body>
     </Card>
-</div>
+</div> : <div>YOUR SHOPPING BAG IS EMPTY</div>}
     </main>
   )
 }
