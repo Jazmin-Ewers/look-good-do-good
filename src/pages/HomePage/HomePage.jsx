@@ -17,13 +17,7 @@ export default function HomePage({ user, setUser, setClothingItems, clothingItem
       setClothingItems(itemsFromDB);
     }
     getItems();
-
-    async function getCart(){
-      const cartFromDB = await ordersAPI.getCart();
-      setCart(cartFromDB);
-    }
-    getCart();
-  }, []);
+  });
 
   return (
     <main className="HomePage">
