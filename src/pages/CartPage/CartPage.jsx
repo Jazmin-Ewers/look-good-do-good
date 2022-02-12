@@ -25,7 +25,7 @@ export default function CartPage({ cart, setCart, handleCheckout }) {
 
   return (
     <main className="CartPage">
-    {cart.isPaid ?
+    {cart ?
     <div className="main-container">
     <div>SHOPPING BAG ORDER SUMMARY</div>
       <div className="table-container">

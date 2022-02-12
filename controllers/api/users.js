@@ -9,22 +9,8 @@ module.exports = {
 };
 
 function checkToken(req, res) {
-  console.log('req.user: ', req.user);
+  console.log('req.user', req.user);
   res.json(req.exp);
-}
-
-async function create(req, res) {
-  try {
-    // Add the user to the DB
-    const user = await User.create(req.body);
-    // Create a token using 'user' obj
-    // Token will be a string!
-    const token = createJWT(user);
-    // Respond to request with JSON of token
-    res.json(token);
-  } catch (err) {
-    res.status(400).json(err);
-  }
 }
 
 async function login(req, res) {
@@ -39,11 +25,26 @@ async function login(req, res) {
   }
 }
 
+async function create(req, res) {
+  try {
+    const user = await User.create(req.body);
+    // token will be a string
+    const token = createJWT(user);
+    // send back the token as a string
+    // which we need to account for 
+    // in the client
+    res.json(token);
+  } catch (e) {
+    res.status(400).json(e);
+  }
+}
 
 
-// Helper Functions
+/*-- Helper Functions --*/
+
 function createJWT(user) {
   return jwt.sign(
+    // data payload
     { user },
     process.env.SECRET,
     { expiresIn: '24h' }

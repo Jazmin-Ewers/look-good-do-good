@@ -11,7 +11,7 @@ import ClothingDetailPage from '../ClothingDetailPage/ClothingDetailPage';
 import CheckoutPage from '../CheckoutPage/CheckoutPage';
 import * as ordersAPI from '../../utilities/orders-api';
 
-function App() {
+export default function App() {
   const [user, setUser] = useState(getUser());
   const [clothingItems, setClothingItems] = useState([]);
   const [clothingItem, setClothingItem] = useState([]);
@@ -25,29 +25,27 @@ function App() {
 
   async function handleCheckout() {
     await ordersAPI.checkout();
-    navigate('/orders');
+    navigate('/checkout');
   }
 
   return (
     <main className="App">
-      {
-        user ?
-        <>
-        <NavBar setUser={setUser} user={user}/>
-          <Routes>
+      { user ?
+      <>
+      <NavBar setUser={setUser} user={user}/>
+      <Routes>
             <Route path="/" element={<HomePage clothingItems={clothingItems} setClothingItems={setClothingItems} cart={cart} setCart={setCart} />} />
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} handleCheckout={handleCheckout} />} />
-            <Route path="/checkout" element={<CheckoutPage cart={cart} setUser={setUser} />} />
+            <Route path="/checkout" element={<CheckoutPage cart={cart} setUser={setUser} setCart={setCart} />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/authpage" element={<AuthPage setUser={setUser} />} />
             <Route path="/clothings/:clothingsItemParam"element={<ClothingDetailPage clothingItem={clothingItem} setClothingItem={setClothingItem} handleAddToOrder={handleAddToOrder}/>} />
             <Route path="/*" element={<Navigate to="/" />} />
-          </Routes>
-        </>
-        :
-        <AuthPage setUser={setUser} />
+      </Routes>
+      </>
+              :
+              <AuthPage setUser={setUser} />
       }
     </main>
   );
 }
-
-export default App;
