@@ -22,9 +22,12 @@ export default function HomePage({ user, setUser, setClothingItems, clothingItem
   return (
     <main className="HomePage">
       <div className="HomePageContainer">
-      <img className="HomePageImg" 
-      src="https://i.imgur.com/hxH02sF.jpg?"></img>
-      <div className="OverlayText">OVERLAY</div>
+        <img className="HomePageImg" src="https://i.imgur.com/hxH02sF.jpg?"></img>
+        <div className="OverlayTextBox">
+          <div className="Content">
+            <h3>DONATE AND RE-CREATE YOUR FAV LOOKS</h3>
+          </div>
+        </div>
       </div>
       <div className="ClothingItemGrid"><ClothingList clothingItems={clothingItems}/></div>
     </main>
