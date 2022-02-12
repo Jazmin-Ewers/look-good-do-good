@@ -1,0 +1,7 @@
+.HomePageImg {
+    width:100%
+}
+.ClothingItemGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

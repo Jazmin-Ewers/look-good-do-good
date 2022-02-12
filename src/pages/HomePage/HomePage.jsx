@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import ClothingList from '../../components/ClothingList/ClothingList';
-import './HomePage'
+import './HomePage.css'
 
 export default function HomePage({ user, setUser, setClothingItems, clothingItems, cart, setCart, handleAddToOrder }) {
   const categoriesRef = useRef([]);
@@ -21,7 +21,12 @@ export default function HomePage({ user, setUser, setClothingItems, clothingItem
 
   return (
     <main className="HomePage">
-      <ClothingList clothingItems={clothingItems}/>
+      <div className="HomePageContainer">
+      <img className="HomePageImg" 
+      src="https://i.imgur.com/hxH02sF.jpg?"></img>
+      <div className="OverlayText">OVERLAY</div>
+      </div>
+      <div className="ClothingItemGrid"><ClothingList clothingItems={clothingItems}/></div>
     </main>
   );
 }
