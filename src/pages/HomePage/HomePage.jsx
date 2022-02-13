@@ -29,7 +29,7 @@ export default function HomePage({ user, setUser, setClothingItems, clothingItem
           </div>
         </div>
       </div>
-      <div className="ClothingItemGrid"><ClothingList clothingItems={clothingItems}/></div>
+      <div className="ClothingItemContainer"><ClothingList clothingItems={clothingItems}/></div>
     </main>
   );
 }

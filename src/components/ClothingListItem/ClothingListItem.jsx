@@ -4,15 +4,14 @@ import { Link } from "react-router-dom";
 
 export default function ClothingListItem({clothingItem}) {
   return (
-    <div className="ClothingListItem">
-    <Link to={`/clothings/${clothingItem._id}`} className="movie-link">
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={clothingItem.mainimageurl} />
-        <Card.Body>
-            <Card.Text>{clothingItem.description}</Card.Text>
-        </Card.Body>
-    </Card>
-    </Link>
+    <Link to={`/clothings/${clothingItem._id}`} style={{textDecoration: "none"}} className="movie-link">
+    <div className="ClothingListItemCard stacked">
+      <img src={clothingItem.mainimageurl} alt="ClothingItem" className="card_img"></img>
+      <div className="card__content">
+        <p className="card__title">{clothingItem.name}</p>
+        <p className="card__price">${clothingItem.price}</p>
+      </div>
     </div>
+    </Link>
   );
 }

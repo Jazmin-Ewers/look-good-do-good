@@ -8,8 +8,8 @@ export default function ClothingList({clothingItems}) {
     />
   );
   return (
-    <main className="ClothingList">
+    <div className="ClothingListItemGrid">
       {items}
-    </main>
+    </div>
   );
 }
