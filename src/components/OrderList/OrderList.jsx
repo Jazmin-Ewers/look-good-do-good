@@ -7,20 +7,17 @@ export default function OrderList({orders}){
     const ordersList = orders.map(order =>
         <OrderListItem
         orderId={order.orderId}
-        lineItems={order.lineItems}
-        isPaid={order.isPaid}
-        orderTotal={order.orderTotal}
-        totalQty={order.totalQty}
+        order={order}
         />
     );
     return(
     <main className="OrderList">
     { orders ?
-    <div className="main-container">
-    <div>ORDERS ORDER SUMMARY</div>
-      <div className="table-container">
+    <div className="OrderListContainer main-container">
+      <div className="OrderListContainerTable table-container">
+        <div>ORDER HISTORY</div>
         <div className="table-row heading">
-          <div className="row-item">PRODUCT</div>
+          <div className="row-item">PRODUCTS</div>
           <div className="row-item">PRICE</div>
           <div className="row-item">QTY</div>
           <div className="row-item">TOTAL PRICE</div>
@@ -28,15 +25,13 @@ export default function OrderList({orders}){
     {orders.map(order =>
     <OrderListItem
       orderId={order.orderId}
-      lineItems={order.lineItems}
-      isPaid={order.isPaid}
-      orderTotal={order.orderTotal}
-      totalQty={order.totalQty}
+      order={order}
     />
     )}
     </div>
     <Card style={{ width: '18rem' }}>
         <Card.Body>
+          <Card.Title>ORDER SUMMARY</Card.Title>
             <Card.Text>Sub Total </Card.Text>
             <Card.Text>Shipping TBD</Card.Text>
             <Card.Text>Estimated Tax $0.00</Card.Text>

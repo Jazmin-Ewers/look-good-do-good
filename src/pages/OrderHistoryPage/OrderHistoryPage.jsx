@@ -1,7 +1,7 @@
-import { checkToken } from "../../utilities/users-service";
 import * as ordersAPI from '../../utilities/orders-api';
 import { useEffect, useState} from 'react';
 import OrderList from "../../components/OrderList/OrderList";
+import './OrderHistoryPage.css'
 
 
 export default function OrderHistoryPage() {

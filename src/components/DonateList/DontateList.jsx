@@ -7,7 +7,7 @@ export default function DonateList({DonationLocations}) {
     />
   );
   return (
-    <div className="DonateListItemGrid">
+    <div className="DonateListItemContainter">
       {locations}
     </div>
   );

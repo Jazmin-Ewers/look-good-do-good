@@ -4,25 +4,85 @@
 *::after {
   box-sizing: border-box;
 }
+/* Make images easier to work with */
+img, picture {
+    max-width: 100%;
+    display: block;
+}
 
+/* Fonts and color */
+li {
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #34495e;
+}
+h1, h2, h3, h4, h6 {
+    font-family: 'Abril Fatface', cursive;
+    color: black;
+}
+p {
+    font-family: 'Montserrat', sans-serif;
+    
+}
+/* Top Half section "Reduce you environment impact */
 .DonatePageContainer{
-    border: 2px solid orange;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: center;
 }
 
 .DonatePageContainer > *:nth-child(1){
-    flex: 1 1 60%;
-    min-width: 30ch;
+    flex: 1 1 70%;
+    min-width: 50ch;
 };
 
 .DonatePageContainer > *:nth-child(2){
-    flex: 1 1 40%;
+    flex: 1 1 30%;
     min-width: 15ch;
 };
+.DonatePageImg {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+.DonatePageImgContainter {
+    max-width: 50%;
+    justify-content: center;
+} 
+.DonatePageContent {
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 10px; 
+}
 
+/* Bottom Half section "List of Donation Locations" */
 .DonateCardContainer {
+    border: 2px red solid;
+}
+.DonateListItemCard {
+    border: 3px solid green;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1rem;
+}
+.DonateListItemCardImgContainer {
+    justify-content: center;
+}
+
+.card_img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.card__title {
+    font-size: 1.75rem;
+    line-height: 1.1;
+}
+.card_button_text {
+    color: white;
+    text-decoration: none;
+}
+/* .DonateCardContainer {
     width: 100%;
     margin: auto, 0;
     position: relative;
@@ -31,86 +91,60 @@
     justify-content: center;
     text-align:center;
     border: 2px solid green;
-}
-
-.DonatePageImg {
-    width:100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-}
-
-
-
-/* .TextBox {
-    margin-top:50px;
-    background-color: white;
-    position: absolute;
-    width: 400px;
-    height: 300px;
-    text-align: center;
-    
-
 } */
 
-.Content {
+/* .Content {
     padding: 100px 30px;
-  }
+    text-align: left;
+  } */
 
-.DonateItemContainer {
+/* .DonateItemContainer {
     max-width: 100rem;
     margin-inline: auto;
     padding-inline: 2rem;
-    border: 2px solid green;
-}
+    border: 5px solid blue;
+} */
 
-
-.DonateListItemGrid {
-    border: 2px solid red;
-    display: grid;
+/* .DonateListItemGrid {
+    /* display: grid;
     gap: .125rem;
     grid-template-columns:
-        repeat(auto-fit, minmax(22rem, 1fr));
+        repeat(auto-fit, minmax(30rem, 1fr)); */
     
-}
 
-.DonateListItemCard {
+/* .DonateListItemCard {
     border: 3px solid hotpink;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
 
-}
-
-h3 {
-    font-family: 'Abril Fatface', cursive;
-}
-
-/* Make images easier to work with */
-img, picture {
-    max-width: 100%;
-    display: block;
-}
-.card_img {
-    width: 100%;
+/* .DonateListItemCardImgContainer {
+    max-width: 50%;
+    justify-content: center;
+} */
+/* .card_img {
+    width:100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-}
+} */
 
-.card__content {
+
+
+
+
+
+/* .card__content {
     background: white;
     align-self: end;
     text-align: left;
     /* margin: .5rem .5rem 2rem; */
-    padding:.5rem; 
+    /* padding:.5rem; 
     /* box-shadow: 0 .25rem 1rem rgb(0 0 0 / .1) */
-}
+    /* padding: 100px 30px;
+    /* text-align: left; */ 
+/* } */ 
 
-/* .card__title {
-    font-size: 1.25rem;
-    line-height: 1.1;
-    color: firebrick;
-} */
-/* .card__price {
-    font-size: 1.75rem;
-} */
 
-p {
-    font-family: 'Montserrat', sans-serif;
-}
+
+
