@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Look Good Do Good
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a responsive clothing website made for anyone that loves buying quality clothing without causing environmetal harm. Clothing waste is a huge probelm. This projects aims to correct this by offering sustainable clothing to buy and options for donating older clothing to nearby shelter.
 
-## Available Scripts
+## What the user can do...
+The user can browse clothing selections on the main page, add an item to their bag and checkout with their order. The website also allows for the user to view their order histry. 
 
-In the project directory, you can run:
+![Imgur](https://i.imgur.com/7Kqs1pu.png)
+![Imgur](https://i.imgur.com/Ok4rBA6.png)
+![Imgur](https://i.imgur.com/zOtPGUl.png)
+![Imgur](https://i.imgur.com/yB3WXOP.png)
+![Imgur](https://i.imgur.com/DPUCBLV.png)
+![Imgur](https://i.imgur.com/q2tEIWT.png)
 
-### `npm start`
+## Technologies Used:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Mongoose/MongoDB
+* Express.js
+* Node.js
+* React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to Use
+Click on the link for the depolyed app via Heroku https://look-good-do-good-gen-assem.herokuapp.com/
+Create a User or Sign in with Username: guest@guest.com  Password: guest
 
-### `npm test`
+## Planning Process
+Here is the Trello board for project's planning which includes the user stories, wireframes & an ERD.
+https://trello.com/b/7g4yJvDT/project-4-look-good-do-good
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Next Steps (icebox items)
+* Incorporate Stripe API so that users can experience the payment process
+* Add a Favorites section, so that users can saved clothing items for a later purchase
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
