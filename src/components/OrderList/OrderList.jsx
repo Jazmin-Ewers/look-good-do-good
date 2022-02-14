@@ -19,7 +19,7 @@ export default function OrderList({orders}){
         <div>ORDER HISTORY</div>
         <div className="table-row heading">
           <div className="row-item">PRODUCTS</div>
-          <div className="row-item">PRICE</div>
+          <div className="row-item">ORDER ID</div>
           <div className="row-item">QTY</div>
           <div className="row-item">TOTAL PRICE</div>
     </div>
