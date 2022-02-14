@@ -8,6 +8,7 @@ export default function OrderList({orders}){
         <OrderListItem
         orderId={order.orderId}
         order={order}
+        lineItem={order.lineItems}
         />
     );
     return(
@@ -26,6 +27,7 @@ export default function OrderList({orders}){
     <OrderListItem
       orderId={order.orderId}
       order={order}
+      lineItem={order.lineItems}
     />
     )}
     </div>

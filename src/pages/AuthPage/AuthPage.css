@@ -1,0 +1,11 @@
+.AuthPage {
+    border: 1px solid black;
+    display: grid;
+    gap: .125rem;
+    grid-template-columns:
+        repeat(auto-fit, minmax(22rem, 1fr));
+}
+
+.formBox {
+    padding: 20px;
+}
