@@ -1,0 +1,11 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.ClothingDetailPage {
+    border: 3px solid green;
+    display: flex;
+}
