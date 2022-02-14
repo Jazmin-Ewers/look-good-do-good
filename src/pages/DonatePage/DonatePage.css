@@ -1,0 +1,116 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.DonatePageContainer{
+    border: 2px solid orange;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.DonatePageContainer > *:nth-child(1){
+    flex: 1 1 60%;
+    min-width: 30ch;
+};
+
+.DonatePageContainer > *:nth-child(2){
+    flex: 1 1 40%;
+    min-width: 15ch;
+};
+
+.DonateCardContainer {
+    width: 100%;
+    margin: auto, 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    border: 2px solid green;
+}
+
+.DonatePageImg {
+    width:100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+
+
+/* .TextBox {
+    margin-top:50px;
+    background-color: white;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    
+
+} */
+
+.Content {
+    padding: 100px 30px;
+  }
+
+.DonateItemContainer {
+    max-width: 100rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    border: 2px solid green;
+}
+
+
+.DonateListItemGrid {
+    border: 2px solid red;
+    display: grid;
+    gap: .125rem;
+    grid-template-columns:
+        repeat(auto-fit, minmax(22rem, 1fr));
+    
+}
+
+.DonateListItemCard {
+    border: 3px solid hotpink;
+
+}
+
+h3 {
+    font-family: 'Abril Fatface', cursive;
+}
+
+/* Make images easier to work with */
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+.card_img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.card__content {
+    background: white;
+    align-self: end;
+    text-align: left;
+    /* margin: .5rem .5rem 2rem; */
+    padding:.5rem; 
+    /* box-shadow: 0 .25rem 1rem rgb(0 0 0 / .1) */
+}
+
+/* .card__title {
+    font-size: 1.25rem;
+    line-height: 1.1;
+    color: firebrick;
+} */
+/* .card__price {
+    font-size: 1.75rem;
+} */
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
