@@ -1,0 +1,15 @@
+.CheckoutPage {
+    display: flex;
+    flex-basis: 100%;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.ShippingAddressSection  {
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.OrderSummarySection {
+    padding: 20px;
+}

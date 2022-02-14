@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import { MdOutlineModeEditOutline, MdOutlineDeleteOutline } from 'react-icons/md'
 
 export default function LineItem({ lineItem, isPaid}) {
   return (
@@ -7,6 +8,9 @@ export default function LineItem({ lineItem, isPaid}) {
     <div className="row-item">{lineItem.item.price}</div>
     <div className="row-item">{lineItem.qty}</div>
     <div className="row-item">{lineItem.exitPrice}</div>
+    <div><MdOutlineModeEditOutline/></div>
+    <br></br>
+    <div><MdOutlineDeleteOutline/></div>
     </div>
   );
 }

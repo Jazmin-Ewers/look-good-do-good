@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useEffect } from 'react';
+import './CheckoutPage.css';
 
 
 export default function CheckoutPage({ setUser, cart, setCart }) {
@@ -19,7 +20,8 @@ export default function CheckoutPage({ setUser, cart, setCart }) {
     }, []);
     
   return (
-    <main>
+    <main className="CheckoutPage">
+  <div className="ShippingAddressSection">
   <h2>Shipping Address</h2>
       <Form>
   <Row className="mb-3">
@@ -63,18 +65,13 @@ export default function CheckoutPage({ setUser, cart, setCart }) {
       <Form.Control />
     </Form.Group>
   </Row>
-
-  <Form.Group className="mb-3" id="formGridCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
+  <Button variant="dark" >Submit</Button>
 </Form>
-Order Summary
+</div>
+<div className="OrderSummarySection">
 <Card style={{ width: '18rem' }}>
         <Card.Body>
+            <Card.Title>Order Summary</Card.Title>
             <Card.Text>Sub Total ${cart.orderTotal}</Card.Text>
             <Card.Text>Shipping TBD</Card.Text>
             <Card.Text>Estimated Tax $0.00</Card.Text>
@@ -82,6 +79,7 @@ Order Summary
             <Button variant="dark">PAY</Button>
         </Card.Body>
     </Card>
+  </div>
     </main>
   )
 }
