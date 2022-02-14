@@ -27,8 +27,8 @@ export default function CartPage({ cart, setCart, handleCheckout }) {
     <main className="CartPage">
     {cart ?
     <div className="main-container">
-    <div>SHOPPING BAG ORDER SUMMARY</div>
       <div className="table-container">
+        <div>SHOPPING BAG</div>
         <div className="table-row heading">
           <div className="row-item">PRODUCT</div>
           <div className="row-item">PRICE</div>
@@ -43,8 +43,10 @@ export default function CartPage({ cart, setCart, handleCheckout }) {
     />
     )}
    </div>
+   <div className="OrderSummaryCard">
    <Card style={{ width: '18rem' }}>
         <Card.Body>
+            <Card.Title>ORDER SUMMARY</Card.Title>
             <Card.Text>Sub Total ${cart.orderTotal}</Card.Text>
             <Card.Text>Shipping TBD</Card.Text>
             <Card.Text>Estimated Tax $0.00</Card.Text>
@@ -52,6 +54,7 @@ export default function CartPage({ cart, setCart, handleCheckout }) {
             <Button variant="dark" onClick={() => handleCheckout()} disabled={!lineItems.length}>CHECKOUT</Button>
         </Card.Body>
     </Card>
+    </div>
 </div> : <div>YOUR SHOPPING BAG IS EMPTY</div>}
     </main>
   )
