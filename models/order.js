@@ -24,24 +24,30 @@ const orderSchema = new Schema({
   toJSON: { virtuals: true }
 });
 
+// Calculate the Total Price of the order by adding all the line items prices together
 orderSchema.virtual('orderTotal').get(function () {
     return this.lineItems.reduce((total, item) => total + item.exitPrice, 0);
 })
 
+// Calculate the Total Quantity of the order by adding all the line items together
 orderSchema.virtual('totalQty').get(function() {
     return this.lineItems.reduce((total, item) => total + item.qty, 0);
 })
 
+// Create an order Id by taking the last six digits of the order schema's id
 orderSchema.virtual('orderId').get(function() {
   return this.id.slice(-6).toUpperCase();
 });
 
 orderSchema.methods.addItemToCart = async function(itemId) {
   const cart = this;
+  // Find out if the selected item is already apart of the user's cart
   const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
   if (lineItem) {
+    // if the item is already in the user's cart increase the quantity
     lineItem.qty += 1;
   } else {
+    // if not, associate that item to the cart's model as a lineItem
     const item = await mongoose.model('Item').findById(itemId);
     cart.lineItems.push({ item });
   }
@@ -53,7 +59,7 @@ orderSchema.statics.getCart = function (userId) {
   return this.findOneAndUpdate(
     // 1st Parameter (Query): Find User Order that isn't paid
     {user: userId, isPaid: false},
-    // 2nd Parameter (If you find on then Update): Create a new Order that has a User property with a default of is:false
+    // 2nd Parameter (If you find one then Update): Create a new Order that has a User property with a default of is:false
     { user: userId },
     // Third Parameter (Overrides findOneAndUpdate return default -> to return the updated Data)
     { upsert: true, new: true}
