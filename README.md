@@ -1,9 +1,9 @@
 # Look Good Do Good
 
-This project is a responsive clothing website made for anyone that loves buying quality clothing without causing environmetal harm. Clothing waste is a huge probelm. This projects aims to correct this by offering sustainable clothing to buy and options for donating older clothing to nearby shelter.
+This project is a responsive clothing website made for anyone that loves buying quality clothing without causing environmetal harm. Clothing waste is a huge probelm. This projects aims to correct this by offering sustainable clothing to buy and options for donating older clothing to nearby shelters.
 
 ## What the user can do...
-The user can browse clothing selections on the main page, add an item to their bag and checkout with their order. The website also allows for the user to view their order histry. 
+The user can browse clothing selections on the main page, add an item to their bag and checkout with their order. The website also allows for the user to view their order histry and view a page of clothing donation sites. 
 
 ![Imgur](https://i.imgur.com/7Kqs1pu.png)
 ![Imgur](https://i.imgur.com/Ok4rBA6.png)
